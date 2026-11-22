@@ -1,0 +1,64 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "External Email Approval",
+      "weight": "Bolder",
+      "size": "Large",
+      "color": "Attention"
+    },
+    {
+      "type": "TextBlock",
+      "text": "The agent drafted an external email. Review before it sends.",
+      "wrap": true,
+      "spacing": "None",
+      "isSubtle": true
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        { "title": "To", "value": "${to}" },
+        { "title": "Cc", "value": "${cc}" },
+        { "title": "Subject", "value": "${subject}" },
+        { "title": "On behalf of", "value": "${onBehalfOf}" },
+        { "title": "Customer", "value": "${customerName}" }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Body preview",
+      "weight": "Bolder",
+      "spacing": "Medium"
+    },
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        { "type": "TextBlock", "text": "${bodyPreview}", "wrap": true }
+      ]
+    },
+    {
+      "type": "Input.Text",
+      "id": "editedBody",
+      "label": "Edit body before sending (optional)",
+      "isMultiline": true,
+      "value": "${bodyPreview}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "⚠ This email will be sent from ${fromAddress} and copied to ${accountTeamChannel}.",
+      "wrap": true,
+      "size": "Small",
+      "color": "Warning",
+      "spacing": "Medium"
+    }
+  ],
+  "actions": [
+    { "type": "Action.Submit", "title": "Send now", "style": "positive", "data": { "verb": "send" } },
+    { "type": "Action.Submit", "title": "Save as draft only", "data": { "verb": "draft" } },
+    { "type": "Action.Submit", "title": "Cancel", "style": "destructive", "data": { "verb": "cancel" } }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "salesforce": {
+    "account": {
+      "Name": "Acme Corp",
+      "Industry": "Manufacturing",
+      "AnnualRevenue": 480000000,
+      "NumberOfEmployees": 2200,
+      "BillingStreet": "100 Industrial Way",
+      "BillingCity": "Round Rock",
+      "BillingState": "TX",
+      "BillingPostalCode": "78664",
+      "BillingCountry": "USA",
+      "Phone": "+1-512-555-0100",
+      "Website": "https://acme.example.com",
+      "AccountTier": "Silver",
+      "Description": "Mid-market industrial manufacturer, ~12 sites, hybrid datacenter + edge compute footprint. Current footprint: 64 rack servers (mostly 2U, 4 years old), 2 hyperconverged clusters, planning storage refresh."
+    },
+    "primaryContact": {
+      "FirstName": "Marcus",
+      "LastName": "Reeve",
+      "Title": "VP Infrastructure",
+      "Email": "marcus.reeve@acme.example.com",
+      "Phone": "+1-512-555-0142"
+    },
+    "secondaryContact": {
+      "FirstName": "Priya",
+      "LastName": "Natarajan",
+      "Title": "Director, Datacenter Operations",
+      "Email": "priya.natarajan@acme.example.com"
+    },
+    "openOpportunity": {
+      "Name": "Acme — 2026 Infra Refresh + 3yr Managed Services",
+      "StageName": "Proposal/Price Quote",
+      "Amount": 2850000,
+      "CloseDate": "2026-09-30",
+      "Probability": 60,
+      "NextStep": "Deliver SOW with 3 pricing scenarios; review with Marcus week of 2026-07-08",
+      "Description": "Refresh aged 2U rack server fleet to current-gen, add mid-tier all-flash storage for primary tier-1, wrap with 3-year managed services. Customer is also evaluating a competing vendor for the storage piece."
+    }
+  },
+  "serviceNow": {
+    "customerCompanyRecord": {
+      "name": "Acme Corp",
+      "u_account_tier": "Silver",
+      "u_account_owner": "jordan.lee",
+      "u_msa_signed_date": "2024-03-15",
+      "u_current_sow_end_date": "2026-12-31"
+    },
+    "recentIncidents": [
+      {
+        "number": "INC0040112",
+        "short_description": "2U rack server disk predictive failure — chassis 7, site DAL-01",
+        "priority": 3,
+        "state": "Closed",
+        "opened_at": "2026-05-14T09:21:00Z",
+        "closed_at": "2026-05-14T15:47:00Z",
+        "u_mttr_minutes": 386
+      },
+      {
+        "number": "INC0040287",
+        "short_description": "Hyperconverged cluster — node 3 unresponsive, cluster degraded",
+        "priority": 2,
+        "state": "Closed",
+        "opened_at": "2026-05-22T03:08:00Z",
+        "closed_at": "2026-05-22T07:31:00Z",
+        "u_mttr_minutes": 263
+      },
+      {
+        "number": "INC0040551",
+        "short_description": "Top-of-rack switch — port flapping, intermittent connectivity to backup network",
+        "priority": 3,
+        "state": "In Progress",
+        "opened_at": "2026-06-19T11:02:00Z"
+      },
+      {
+        "number": "INC0040603",
+        "short_description": "Patch deployment failure — 4 hosts skipped during June maintenance window",
+        "priority": 4,
+        "state": "Resolved",
+        "opened_at": "2026-06-21T22:15:00Z",
+        "closed_at": "2026-06-22T10:42:00Z",
+        "u_mttr_minutes": 747,
+        "u_sla_breach": false
+      }
+    ],
+    "openChanges": [
+      {
+        "number": "CHG0009921",
+        "short_description": "Acme — Q3 patching window prep",
+        "state": "Scheduled",
+        "start_date": "2026-07-12T22:00:00Z",
+        "assigned_to": null
+      }
+    ]
+  },
+  "currentFootprintSummary": {
+    "servers": { "form_factor": "2U rack server", "count": 64, "avgAgeYears": 4.2 },
+    "storage": { "type": "Legacy SAN + iSCSI arrays", "tbUsable": 220 },
+    "hyperconverged": { "clusters": 2, "nodesPerCluster": 4 },
+    "networking": { "switches": 12, "type": "48-port 10GbE top-of-rack" },
+    "sites": 12,
+    "managedNodes": 142
+  }
+}

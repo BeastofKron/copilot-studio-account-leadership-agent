@@ -1,0 +1,95 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "SOW Pricing Approval",
+      "weight": "Bolder",
+      "size": "Large",
+      "color": "Accent"
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        { "title": "Customer", "value": "${customerName}" },
+        { "title": "Opportunity", "value": "[${opportunityName}](${opportunityUrl})" },
+        { "title": "Term", "value": "${termYears} years" },
+        { "title": "Target margin", "value": "${targetMargin}%" },
+        { "title": "Requested by", "value": "${requestedBy}" }
+      ]
+    },
+    { "type": "TextBlock", "text": "Three pricing scenarios", "weight": "Bolder", "spacing": "Medium" },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": 1,
+          "style": "default",
+          "items": [
+            { "type": "TextBlock", "text": "Conservative", "weight": "Bolder" },
+            { "type": "TextBlock", "text": "TCV: $${conservative.tcv}", "wrap": true },
+            { "type": "TextBlock", "text": "ARR: $${conservative.arr}", "wrap": true },
+            { "type": "TextBlock", "text": "Margin: ${conservative.margin}%", "wrap": true, "color": "Good" }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": 1,
+          "style": "emphasis",
+          "items": [
+            { "type": "TextBlock", "text": "Target ⭐", "weight": "Bolder" },
+            { "type": "TextBlock", "text": "TCV: $${target.tcv}", "wrap": true },
+            { "type": "TextBlock", "text": "ARR: $${target.arr}", "wrap": true },
+            { "type": "TextBlock", "text": "Margin: ${target.margin}%", "wrap": true, "color": "Accent" }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": 1,
+          "style": "default",
+          "items": [
+            { "type": "TextBlock", "text": "Aggressive", "weight": "Bolder" },
+            { "type": "TextBlock", "text": "TCV: $${aggressive.tcv}", "wrap": true },
+            { "type": "TextBlock", "text": "ARR: $${aggressive.arr}", "wrap": true, "color": "Warning" },
+            { "type": "TextBlock", "text": "Margin: ${aggressive.margin}%", "wrap": true, "color": "Warning" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "id": "selectedScenario",
+      "style": "expanded",
+      "label": "Which scenario do you want to approve?",
+      "value": "target",
+      "choices": [
+        { "title": "Conservative", "value": "conservative" },
+        { "title": "Target (recommended)", "value": "target" },
+        { "title": "Aggressive", "value": "aggressive" }
+      ]
+    },
+    {
+      "type": "Input.Text",
+      "id": "comments",
+      "label": "Comments (optional — visible to agent and account team)",
+      "isMultiline": true,
+      "placeholder": "Reason for choice, requested changes, etc."
+    },
+    {
+      "type": "TextBlock",
+      "text": "Key assumptions: ${assumptionsSummary}",
+      "wrap": true,
+      "size": "Small",
+      "isSubtle": true,
+      "spacing": "Medium"
+    }
+  ],
+  "actions": [
+    { "type": "Action.Submit", "title": "Approve", "style": "positive", "data": { "verb": "approve" } },
+    { "type": "Action.Submit", "title": "Request changes", "data": { "verb": "revise" } },
+    { "type": "Action.Submit", "title": "Reject", "style": "destructive", "data": { "verb": "reject" } }
+  ]
+}

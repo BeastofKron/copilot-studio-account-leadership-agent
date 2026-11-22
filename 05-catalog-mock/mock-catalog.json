@@ -1,0 +1,116 @@
+{
+  "catalogVersion": "2026.06",
+  "currency": "USD",
+  "items": [
+    {
+      "sku": "SRV-2U-T1",
+      "serviceLine": "Servers",
+      "name": "Tier 1 enterprise 2U rack server — dual Xeon Gold, 256GB DDR5, 2×960GB NVMe SSD",
+      "category": "Hardware",
+      "unitPrice": 18750.00,
+      "internalCost": 11200.00,
+      "unit": "each",
+      "leadTimeDays": 14
+    },
+    {
+      "sku": "SRV-1U-T2",
+      "serviceLine": "Servers",
+      "name": "Tier 2 enterprise 1U rack server — single Xeon Silver, 128GB DDR5, 2×480GB SSD",
+      "category": "Hardware",
+      "unitPrice": 11400.00,
+      "internalCost": 6800.00,
+      "unit": "each",
+      "leadTimeDays": 10
+    },
+    {
+      "sku": "STO-AFA-MID",
+      "serviceLine": "Storage",
+      "name": "All-flash storage array — 38TB effective, dual controller, NVMe",
+      "category": "Hardware",
+      "unitPrice": 92500.00,
+      "internalCost": 55000.00,
+      "unit": "each",
+      "leadTimeDays": 21
+    },
+    {
+      "sku": "SUP-24x7-PLAT",
+      "serviceLine": "Support24x7Platinum",
+      "name": "Premium 24×7 support — hardware + software, 1hr response, on-site engineer",
+      "category": "Support",
+      "unitPrice": 4800.00,
+      "internalCost": 1900.00,
+      "unit": "per device per year",
+      "leadTimeDays": 0
+    },
+    {
+      "sku": "SUP-24x7-STD",
+      "serviceLine": "Support24x7Standard",
+      "name": "Standard 24×7 support — hardware, 4hr response",
+      "category": "Support",
+      "unitPrice": 2400.00,
+      "internalCost": 900.00,
+      "unit": "per device per year",
+      "leadTimeDays": 0
+    },
+    {
+      "sku": "PS-INSTALL",
+      "serviceLine": "ProfessionalServices",
+      "name": "Professional services — installation, racking, config baseline",
+      "category": "Services",
+      "unitPrice": 285.00,
+      "internalCost": 140.00,
+      "unit": "per hour",
+      "leadTimeDays": 7
+    },
+    {
+      "sku": "PS-MIGRATE",
+      "serviceLine": "ProfessionalServices",
+      "name": "Professional services — data migration and cutover",
+      "category": "Services",
+      "unitPrice": 325.00,
+      "internalCost": 165.00,
+      "unit": "per hour",
+      "leadTimeDays": 14
+    },
+    {
+      "sku": "NET-100G-32P",
+      "serviceLine": "Networking",
+      "name": "32-port 100GbE aggregation switch",
+      "category": "Hardware",
+      "unitPrice": 26800.00,
+      "internalCost": 16500.00,
+      "unit": "each",
+      "leadTimeDays": 14
+    },
+    {
+      "sku": "NET-10G-48P",
+      "serviceLine": "Networking",
+      "name": "48-port 10GbE + 4-port 100GbE top-of-rack switch",
+      "category": "Hardware",
+      "unitPrice": 14200.00,
+      "internalCost": 8400.00,
+      "unit": "each",
+      "leadTimeDays": 10
+    },
+    {
+      "sku": "MS-MGMT-BASE",
+      "serviceLine": "ManagedServicesOperations",
+      "name": "Managed services operations — monitoring, patching, incident response (per managed node)",
+      "category": "Recurring",
+      "unitPrice": 145.00,
+      "internalCost": 62.00,
+      "unit": "per node per month",
+      "leadTimeDays": 0
+    }
+  ],
+  "discountBands": {
+    "Gold":   { "min": 5, "mid": 12, "max": 20 },
+    "Silver": { "min": 3, "mid": 8,  "max": 15 },
+    "Bronze": { "min": 0, "mid": 5,  "max": 10 }
+  },
+  "tierThresholds": {
+    "Gold":   { "minAnnualRevenueUSD": 1000000000 },
+    "Silver": { "minAnnualRevenueUSD": 250000000 },
+    "Bronze": { "minAnnualRevenueUSD": 0 }
+  }
+}
